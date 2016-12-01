@@ -60,6 +60,8 @@ Partial Class AirConNotify
         Me.TestBtn = New System.Windows.Forms.LinkLabel()
         Me.ThanksBtn = New System.Windows.Forms.LinkLabel()
         Me.SoundCb = New System.Windows.Forms.CheckBox()
+        Me.UnlockCb = New System.Windows.Forms.CheckBox()
+        Me.VersionBtn = New System.Windows.Forms.LinkLabel()
         Me.TimeGBox.SuspendLayout()
         CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -72,7 +74,7 @@ Partial Class AirConNotify
         Me.NotifyTgb.Location = New System.Drawing.Point(125, 18)
         Me.NotifyTgb.Name = "NotifyTgb"
         Me.NotifyTgb.Size = New System.Drawing.Size(120, 38)
-        Me.NotifyTgb.TabIndex = 0
+        Me.NotifyTgb.TabIndex = 24
         Me.NotifyTgb.Text = "通知を一時停止"
         Me.NotifyTgb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.NotifyTgb.UseVisualStyleBackColor = True
@@ -118,7 +120,7 @@ Partial Class AirConNotify
         Me.H23Cb.Location = New System.Drawing.Point(54, 260)
         Me.H23Cb.Name = "H23Cb"
         Me.H23Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H23Cb.TabIndex = 48
+        Me.H23Cb.TabIndex = 23
         Me.H23Cb.Text = "23時"
         Me.H23Cb.UseVisualStyleBackColor = True
         '
@@ -130,7 +132,7 @@ Partial Class AirConNotify
         Me.H22Cb.Location = New System.Drawing.Point(54, 238)
         Me.H22Cb.Name = "H22Cb"
         Me.H22Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H22Cb.TabIndex = 47
+        Me.H22Cb.TabIndex = 22
         Me.H22Cb.Text = "22時"
         Me.H22Cb.UseVisualStyleBackColor = True
         '
@@ -142,7 +144,7 @@ Partial Class AirConNotify
         Me.H21Cb.Location = New System.Drawing.Point(54, 216)
         Me.H21Cb.Name = "H21Cb"
         Me.H21Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H21Cb.TabIndex = 46
+        Me.H21Cb.TabIndex = 21
         Me.H21Cb.Text = "21時"
         Me.H21Cb.UseVisualStyleBackColor = True
         '
@@ -152,7 +154,7 @@ Partial Class AirConNotify
         Me.H20Cb.Location = New System.Drawing.Point(54, 194)
         Me.H20Cb.Name = "H20Cb"
         Me.H20Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H20Cb.TabIndex = 45
+        Me.H20Cb.TabIndex = 20
         Me.H20Cb.Text = "20時"
         Me.H20Cb.UseVisualStyleBackColor = True
         '
@@ -162,7 +164,7 @@ Partial Class AirConNotify
         Me.H19Cb.Location = New System.Drawing.Point(54, 172)
         Me.H19Cb.Name = "H19Cb"
         Me.H19Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H19Cb.TabIndex = 44
+        Me.H19Cb.TabIndex = 19
         Me.H19Cb.Text = "19時"
         Me.H19Cb.UseVisualStyleBackColor = True
         '
@@ -172,7 +174,7 @@ Partial Class AirConNotify
         Me.H18Cb.Location = New System.Drawing.Point(54, 150)
         Me.H18Cb.Name = "H18Cb"
         Me.H18Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H18Cb.TabIndex = 43
+        Me.H18Cb.TabIndex = 18
         Me.H18Cb.Text = "18時"
         Me.H18Cb.UseVisualStyleBackColor = True
         '
@@ -182,7 +184,7 @@ Partial Class AirConNotify
         Me.H17Cb.Location = New System.Drawing.Point(54, 128)
         Me.H17Cb.Name = "H17Cb"
         Me.H17Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H17Cb.TabIndex = 42
+        Me.H17Cb.TabIndex = 17
         Me.H17Cb.Text = "17時"
         Me.H17Cb.UseVisualStyleBackColor = True
         '
@@ -192,7 +194,7 @@ Partial Class AirConNotify
         Me.H16Cb.Location = New System.Drawing.Point(54, 106)
         Me.H16Cb.Name = "H16Cb"
         Me.H16Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H16Cb.TabIndex = 41
+        Me.H16Cb.TabIndex = 16
         Me.H16Cb.Text = "16時"
         Me.H16Cb.UseVisualStyleBackColor = True
         '
@@ -202,7 +204,7 @@ Partial Class AirConNotify
         Me.H15Cb.Location = New System.Drawing.Point(54, 84)
         Me.H15Cb.Name = "H15Cb"
         Me.H15Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H15Cb.TabIndex = 40
+        Me.H15Cb.TabIndex = 15
         Me.H15Cb.Text = "15時"
         Me.H15Cb.UseVisualStyleBackColor = True
         '
@@ -212,7 +214,7 @@ Partial Class AirConNotify
         Me.H14Cb.Location = New System.Drawing.Point(54, 62)
         Me.H14Cb.Name = "H14Cb"
         Me.H14Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H14Cb.TabIndex = 39
+        Me.H14Cb.TabIndex = 14
         Me.H14Cb.Text = "14時"
         Me.H14Cb.UseVisualStyleBackColor = True
         '
@@ -222,7 +224,7 @@ Partial Class AirConNotify
         Me.H13Cb.Location = New System.Drawing.Point(54, 40)
         Me.H13Cb.Name = "H13Cb"
         Me.H13Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H13Cb.TabIndex = 38
+        Me.H13Cb.TabIndex = 13
         Me.H13Cb.Text = "13時"
         Me.H13Cb.UseVisualStyleBackColor = True
         '
@@ -232,7 +234,7 @@ Partial Class AirConNotify
         Me.H12Cb.Location = New System.Drawing.Point(54, 18)
         Me.H12Cb.Name = "H12Cb"
         Me.H12Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H12Cb.TabIndex = 37
+        Me.H12Cb.TabIndex = 12
         Me.H12Cb.Text = "12時"
         Me.H12Cb.UseVisualStyleBackColor = True
         '
@@ -242,7 +244,7 @@ Partial Class AirConNotify
         Me.H11Cb.Location = New System.Drawing.Point(6, 260)
         Me.H11Cb.Name = "H11Cb"
         Me.H11Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H11Cb.TabIndex = 36
+        Me.H11Cb.TabIndex = 11
         Me.H11Cb.Text = "11時"
         Me.H11Cb.UseVisualStyleBackColor = True
         '
@@ -252,7 +254,7 @@ Partial Class AirConNotify
         Me.H10Cb.Location = New System.Drawing.Point(6, 238)
         Me.H10Cb.Name = "H10Cb"
         Me.H10Cb.Size = New System.Drawing.Size(48, 16)
-        Me.H10Cb.TabIndex = 35
+        Me.H10Cb.TabIndex = 10
         Me.H10Cb.Text = "10時"
         Me.H10Cb.UseVisualStyleBackColor = True
         '
@@ -262,7 +264,7 @@ Partial Class AirConNotify
         Me.H09Cb.Location = New System.Drawing.Point(6, 216)
         Me.H09Cb.Name = "H09Cb"
         Me.H09Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H09Cb.TabIndex = 34
+        Me.H09Cb.TabIndex = 9
         Me.H09Cb.Text = "9時"
         Me.H09Cb.UseVisualStyleBackColor = True
         '
@@ -272,7 +274,7 @@ Partial Class AirConNotify
         Me.H08Cb.Location = New System.Drawing.Point(6, 194)
         Me.H08Cb.Name = "H08Cb"
         Me.H08Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H08Cb.TabIndex = 33
+        Me.H08Cb.TabIndex = 8
         Me.H08Cb.Text = "8時"
         Me.H08Cb.UseVisualStyleBackColor = True
         '
@@ -282,7 +284,7 @@ Partial Class AirConNotify
         Me.H07Cb.Location = New System.Drawing.Point(6, 172)
         Me.H07Cb.Name = "H07Cb"
         Me.H07Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H07Cb.TabIndex = 32
+        Me.H07Cb.TabIndex = 7
         Me.H07Cb.Text = "7時"
         Me.H07Cb.UseVisualStyleBackColor = True
         '
@@ -294,7 +296,7 @@ Partial Class AirConNotify
         Me.H06Cb.Location = New System.Drawing.Point(6, 150)
         Me.H06Cb.Name = "H06Cb"
         Me.H06Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H06Cb.TabIndex = 31
+        Me.H06Cb.TabIndex = 6
         Me.H06Cb.Text = "6時"
         Me.H06Cb.UseVisualStyleBackColor = True
         '
@@ -304,7 +306,7 @@ Partial Class AirConNotify
         Me.H05Cb.Location = New System.Drawing.Point(6, 128)
         Me.H05Cb.Name = "H05Cb"
         Me.H05Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H05Cb.TabIndex = 30
+        Me.H05Cb.TabIndex = 5
         Me.H05Cb.Text = "5時"
         Me.H05Cb.UseVisualStyleBackColor = True
         '
@@ -316,7 +318,7 @@ Partial Class AirConNotify
         Me.H04Cb.Location = New System.Drawing.Point(6, 106)
         Me.H04Cb.Name = "H04Cb"
         Me.H04Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H04Cb.TabIndex = 29
+        Me.H04Cb.TabIndex = 4
         Me.H04Cb.Text = "4時"
         Me.H04Cb.UseVisualStyleBackColor = True
         '
@@ -326,7 +328,7 @@ Partial Class AirConNotify
         Me.H03Cb.Location = New System.Drawing.Point(6, 84)
         Me.H03Cb.Name = "H03Cb"
         Me.H03Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H03Cb.TabIndex = 28
+        Me.H03Cb.TabIndex = 3
         Me.H03Cb.Text = "3時"
         Me.H03Cb.UseVisualStyleBackColor = True
         '
@@ -338,7 +340,7 @@ Partial Class AirConNotify
         Me.H02Cb.Location = New System.Drawing.Point(6, 62)
         Me.H02Cb.Name = "H02Cb"
         Me.H02Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H02Cb.TabIndex = 27
+        Me.H02Cb.TabIndex = 2
         Me.H02Cb.Text = "2時"
         Me.H02Cb.UseVisualStyleBackColor = True
         '
@@ -348,7 +350,7 @@ Partial Class AirConNotify
         Me.H01Cb.Location = New System.Drawing.Point(6, 40)
         Me.H01Cb.Name = "H01Cb"
         Me.H01Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H01Cb.TabIndex = 26
+        Me.H01Cb.TabIndex = 1
         Me.H01Cb.Text = "1時"
         Me.H01Cb.UseVisualStyleBackColor = True
         '
@@ -360,7 +362,7 @@ Partial Class AirConNotify
         Me.H00Cb.Location = New System.Drawing.Point(6, 18)
         Me.H00Cb.Name = "H00Cb"
         Me.H00Cb.Size = New System.Drawing.Size(42, 16)
-        Me.H00Cb.TabIndex = 25
+        Me.H00Cb.TabIndex = 0
         Me.H00Cb.Text = "0時"
         Me.H00Cb.UseVisualStyleBackColor = True
         '
@@ -393,7 +395,7 @@ Partial Class AirConNotify
         Me.MinuteNud.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
         Me.MinuteNud.Name = "MinuteNud"
         Me.MinuteNud.Size = New System.Drawing.Size(35, 19)
-        Me.MinuteNud.TabIndex = 28
+        Me.MinuteNud.TabIndex = 25
         '
         'MinuteLbl
         '
@@ -410,7 +412,7 @@ Partial Class AirConNotify
         Me.ResetBtn.Location = New System.Drawing.Point(208, 223)
         Me.ResetBtn.Name = "ResetBtn"
         Me.ResetBtn.Size = New System.Drawing.Size(37, 12)
-        Me.ResetBtn.TabIndex = 33
+        Me.ResetBtn.TabIndex = 53
         Me.ResetBtn.TabStop = True
         Me.ResetBtn.Text = "リセット"
         '
@@ -420,7 +422,7 @@ Partial Class AirConNotify
         Me.ExitBtn.Location = New System.Drawing.Point(216, 238)
         Me.ExitBtn.Name = "ExitBtn"
         Me.ExitBtn.Size = New System.Drawing.Size(29, 12)
-        Me.ExitBtn.TabIndex = 34
+        Me.ExitBtn.TabIndex = 54
         Me.ExitBtn.TabStop = True
         Me.ExitBtn.Text = "終了"
         '
@@ -430,17 +432,17 @@ Partial Class AirConNotify
         Me.TestBtn.Location = New System.Drawing.Point(214, 207)
         Me.TestBtn.Name = "TestBtn"
         Me.TestBtn.Size = New System.Drawing.Size(31, 12)
-        Me.TestBtn.TabIndex = 35
+        Me.TestBtn.TabIndex = 52
         Me.TestBtn.TabStop = True
         Me.TestBtn.Text = "テスト"
         '
         'ThanksBtn
         '
         Me.ThanksBtn.AutoSize = True
-        Me.ThanksBtn.Location = New System.Drawing.Point(125, 238)
+        Me.ThanksBtn.Location = New System.Drawing.Point(125, 223)
         Me.ThanksBtn.Name = "ThanksBtn"
         Me.ThanksBtn.Size = New System.Drawing.Size(29, 12)
-        Me.ThanksBtn.TabIndex = 36
+        Me.ThanksBtn.TabIndex = 50
         Me.ThanksBtn.TabStop = True
         Me.ThanksBtn.Text = "謝辞"
         '
@@ -452,9 +454,29 @@ Partial Class AirConNotify
         Me.SoundCb.Location = New System.Drawing.Point(125, 87)
         Me.SoundCb.Name = "SoundCb"
         Me.SoundCb.Size = New System.Drawing.Size(61, 16)
-        Me.SoundCb.TabIndex = 37
+        Me.SoundCb.TabIndex = 26
         Me.SoundCb.Text = "サウンド"
         Me.SoundCb.UseVisualStyleBackColor = True
+        '
+        'UnlockCb
+        '
+        Me.UnlockCb.AutoSize = True
+        Me.UnlockCb.Location = New System.Drawing.Point(125, 109)
+        Me.UnlockCb.Name = "UnlockCb"
+        Me.UnlockCb.Size = New System.Drawing.Size(117, 16)
+        Me.UnlockCb.TabIndex = 27
+        Me.UnlockCb.Text = "画面省電力を解除"
+        Me.UnlockCb.UseVisualStyleBackColor = True
+        '
+        'VersionBtn
+        '
+        Me.VersionBtn.AutoSize = True
+        Me.VersionBtn.Location = New System.Drawing.Point(125, 238)
+        Me.VersionBtn.Name = "VersionBtn"
+        Me.VersionBtn.Size = New System.Drawing.Size(50, 12)
+        Me.VersionBtn.TabIndex = 51
+        Me.VersionBtn.TabStop = True
+        Me.VersionBtn.Text = "バージョン"
         '
         'AirConNotify
         '
@@ -462,6 +484,8 @@ Partial Class AirConNotify
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(255, 306)
         Me.ControlBox = False
+        Me.Controls.Add(Me.VersionBtn)
+        Me.Controls.Add(Me.UnlockCb)
         Me.Controls.Add(Me.SoundCb)
         Me.Controls.Add(Me.ThanksBtn)
         Me.Controls.Add(Me.TestBtn)
@@ -519,4 +543,6 @@ Partial Class AirConNotify
     Friend WithEvents TestBtn As LinkLabel
     Friend WithEvents ThanksBtn As LinkLabel
     Friend WithEvents SoundCb As CheckBox
+    Friend WithEvents UnlockCb As CheckBox
+    Friend WithEvents VersionBtn As LinkLabel
 End Class

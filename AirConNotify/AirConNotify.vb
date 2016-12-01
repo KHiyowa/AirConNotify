@@ -4,6 +4,15 @@
     Const DAYSTART As Integer = 6
 #Region "UI関連"
 
+    ' 省電力解除ボタン
+    Private Sub UnlockCb_CheckedChanged(sender As Object, e As EventArgs) Handles UnlockCb.CheckedChanged
+        If UnlockCb.Checked = True Then
+            MinuteNud.Minimum = 1
+        Else
+            MinuteNud.Minimum = 0
+        End If
+    End Sub
+
     ' テストボタン
     Private Sub TestBtn_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles TestBtn.LinkClicked
         ExeNotify(TEST)
@@ -12,6 +21,11 @@
     ' リセットボタン
     Private Sub ResetBtn_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles ResetBtn.LinkClicked
         Reset()
+    End Sub
+
+    ' バージョンボタン
+    Private Sub VersionBtn_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles VersionBtn.LinkClicked
+        MsgBox(Me.ProductVersion)
     End Sub
 
     ' 謝辞ボタン
@@ -60,7 +74,13 @@
         Dim iHour As Integer = dtNow.Hour
         Dim iMinute As Integer = dtNow.Minute
 
-        ' 通知が有効で、設定した時間の設定した分だったら通知を実行
+        ' 通知が有効で、画面ロック解除が有効で、設定した時分の1分前だったら画面ロック解除を実行
+        If NotifyTgb.Checked And UnlockCb.Checked And
+            iMinute = MinuteNud.Value - 1 And CheckState(iHour) Then
+            PowerOnMonitor()
+        End If
+
+        ' 通知が有効で、設定した時分だったら通知を実行
         If NotifyTgb.Checked And
             iMinute = MinuteNud.Value And CheckState(iHour) Then
             ExeNotify(iHour)
@@ -71,6 +91,11 @@
                 iMinute = MinuteNud.Value And CheckState(DAYSTART) Then
             NotifyTgb.Checked = True
         End If
+    End Sub
+
+    ' 画面省電力を解除する(モニタにスピーカーがついている環境向け)
+    Private Sub PowerOnMonitor()
+        SendKeys.Send("+")
     End Sub
 
     ' 通知を実行する
