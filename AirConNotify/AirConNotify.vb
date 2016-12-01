@@ -1,6 +1,6 @@
 ﻿Public Class AirConNotify
     Private player As System.Media.SoundPlayer = Nothing
-    Const TEST As Integer = 0
+    Const TEST As Integer = 24
     Const DAYSTART As Integer = 6
 #Region "UI関連"
 
@@ -84,14 +84,16 @@
 
     ' サウンド再生
     Private Sub PlaySound(WaveFile As String)
+        WaveFile = "wav\" + WaveFile
 
         '読み込む
         If IO.File.Exists(WaveFile) Then
             player = New System.Media.SoundPlayer(WaveFile)
+        ElseIf IO.File.Exists("wav\default.wav") Then
+            player = New System.Media.SoundPlayer("wav\default.wav")
         Else
-            player = New System.Media.SoundPlayer("default.wav")
+            Exit Sub
         End If
-
 
         '非同期再生する
         player.Play()
