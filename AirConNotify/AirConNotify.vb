@@ -1,4 +1,5 @@
 ﻿Public Class AirConNotify
+    Private player As System.Media.SoundPlayer = Nothing
     Const TEST As Integer = 0
     Const DAYSTART As Integer = 6
 #Region "UI関連"
@@ -74,7 +75,23 @@
 
     ' 通知を実行する
     Private Sub ExeNotify(t As Integer)
+        ' 通知を表示
         TaskTrayNi.ShowBalloonTip(10)
+
+        ' サウンドを再生
+        PlaySound(t)
+    End Sub
+
+    ' サウンド再生
+    Private Sub PlaySound(WaveFile As String)
+        '再生されているときは止める
+
+        '読み込む
+
+        player = New System.Media.SoundPlayer("default.wav")
+        '非同期再生する
+        player.Play()
+
     End Sub
 
     ' 指定した時刻にチェックが入っているか調べる

@@ -380,6 +380,7 @@ Partial Class AirConNotify
         '
         'TaskTrayNi
         '
+        Me.TaskTrayNi.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.TaskTrayNi.BalloonTipText = "まもなくエアコンが止まります。"
         Me.TaskTrayNi.BalloonTipTitle = "空調通知"
         Me.TaskTrayNi.Icon = CType(resources.GetObject("TaskTrayNi.Icon"), System.Drawing.Icon)
