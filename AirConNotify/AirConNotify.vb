@@ -76,22 +76,25 @@
     ' 通知を実行する
     Private Sub ExeNotify(t As Integer)
         ' 通知を表示
-        TaskTrayNi.ShowBalloonTip(10)
+        TaskTrayNi.ShowBalloonTip(60)
 
         ' サウンドを再生
-        If SoundCb.Checked = True Then PlaySound(t)
+        If SoundCb.Checked = True Then PlaySound(CType(t, String) + ".wav")
     End Sub
 
     ' サウンド再生
     Private Sub PlaySound(WaveFile As String)
-        '再生されているときは止める
 
         '読み込む
+        If IO.File.Exists(WaveFile) Then
+            player = New System.Media.SoundPlayer(WaveFile)
+        Else
+            player = New System.Media.SoundPlayer("default.wav")
+        End If
 
-        player = New System.Media.SoundPlayer("default.wav")
+
         '非同期再生する
         player.Play()
-
     End Sub
 
     ' 指定した時刻にチェックが入っているか調べる
