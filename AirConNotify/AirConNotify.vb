@@ -79,7 +79,7 @@
         TaskTrayNi.ShowBalloonTip(10)
 
         ' サウンドを再生
-        PlaySound(t)
+        If SoundCb.Checked = True Then PlaySound(t)
     End Sub
 
     ' サウンド再生

@@ -384,7 +384,7 @@ Partial Class AirConNotify
         Me.TaskTrayNi.BalloonTipText = "まもなくエアコンが止まります。"
         Me.TaskTrayNi.BalloonTipTitle = "空調通知"
         Me.TaskTrayNi.Icon = CType(resources.GetObject("TaskTrayNi.Icon"), System.Drawing.Icon)
-        Me.TaskTrayNi.Text = "空調通知: ダブルクリックでウィンドウ復元"
+        Me.TaskTrayNi.Text = "空調通知"
         Me.TaskTrayNi.Visible = True
         '
         'MinuteNud
