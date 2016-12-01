@@ -127,7 +127,10 @@
     ' 指定した時刻にチェックが入っているか調べる
     Private Function CheckState(t As Integer)
         For Each item As Control In TimeGBox.Controls
-            If CType(CType(item, CheckBox).Name.Substring(1, 2), Integer) = t Then Return True
+            If CType(CType(item, CheckBox).Name.Substring(1, 2), Integer) = t And
+                    CType(item, CheckBox).Checked = True Then
+                Return True
+            End If
         Next
         Return False
     End Function
