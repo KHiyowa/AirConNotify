@@ -67,9 +67,15 @@ Partial Class AirConNotify
         Me.SoundCb = New System.Windows.Forms.CheckBox()
         Me.UnlockCb = New System.Windows.Forms.CheckBox()
         Me.VersionBtn = New System.Windows.Forms.LinkLabel()
+        Me.MainTc = New System.Windows.Forms.TabControl()
+        Me.MainTp = New System.Windows.Forms.TabPage()
+        Me.SettingTp = New System.Windows.Forms.TabPage()
         Me.TimeGBox.SuspendLayout()
         Me.TaskTrayCms.SuspendLayout()
         CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MainTc.SuspendLayout()
+        Me.MainTp.SuspendLayout()
+        Me.SettingTp.SuspendLayout()
         Me.SuspendLayout()
         '
         'NotifyTgb
@@ -77,9 +83,9 @@ Partial Class AirConNotify
         Me.NotifyTgb.Appearance = System.Windows.Forms.Appearance.Button
         Me.NotifyTgb.Checked = True
         Me.NotifyTgb.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.NotifyTgb.Location = New System.Drawing.Point(125, 18)
+        Me.NotifyTgb.Location = New System.Drawing.Point(32, 50)
         Me.NotifyTgb.Name = "NotifyTgb"
-        Me.NotifyTgb.Size = New System.Drawing.Size(120, 38)
+        Me.NotifyTgb.Size = New System.Drawing.Size(176, 94)
         Me.NotifyTgb.TabIndex = 24
         Me.NotifyTgb.Text = "通知を一時停止"
         Me.NotifyTgb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -111,12 +117,12 @@ Partial Class AirConNotify
         Me.TimeGBox.Controls.Add(Me.H02Cb)
         Me.TimeGBox.Controls.Add(Me.H01Cb)
         Me.TimeGBox.Controls.Add(Me.H00Cb)
-        Me.TimeGBox.Location = New System.Drawing.Point(12, 12)
+        Me.TimeGBox.Location = New System.Drawing.Point(6, 6)
         Me.TimeGBox.Name = "TimeGBox"
-        Me.TimeGBox.Size = New System.Drawing.Size(107, 285)
+        Me.TimeGBox.Size = New System.Drawing.Size(107, 280)
         Me.TimeGBox.TabIndex = 25
         Me.TimeGBox.TabStop = False
-        Me.TimeGBox.Text = "通知時刻"
+        Me.TimeGBox.Text = "通知時"
         '
         'H23Cb
         '
@@ -374,9 +380,9 @@ Partial Class AirConNotify
         '
         'MinimizeBtn
         '
-        Me.MinimizeBtn.Location = New System.Drawing.Point(125, 256)
+        Me.MinimizeBtn.Location = New System.Drawing.Point(32, 182)
         Me.MinimizeBtn.Name = "MinimizeBtn"
-        Me.MinimizeBtn.Size = New System.Drawing.Size(120, 38)
+        Me.MinimizeBtn.Size = New System.Drawing.Size(176, 94)
         Me.MinimizeBtn.TabIndex = 27
         Me.MinimizeBtn.Text = "最小化"
         Me.MinimizeBtn.UseVisualStyleBackColor = True
@@ -428,7 +434,7 @@ Partial Class AirConNotify
         '
         'MinuteNud
         '
-        Me.MinuteNud.Location = New System.Drawing.Point(125, 62)
+        Me.MinuteNud.Location = New System.Drawing.Point(12, 292)
         Me.MinuteNud.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
         Me.MinuteNud.Name = "MinuteNud"
         Me.MinuteNud.Size = New System.Drawing.Size(35, 19)
@@ -437,7 +443,7 @@ Partial Class AirConNotify
         'MinuteLbl
         '
         Me.MinuteLbl.AutoSize = True
-        Me.MinuteLbl.Location = New System.Drawing.Point(162, 65)
+        Me.MinuteLbl.Location = New System.Drawing.Point(53, 296)
         Me.MinuteLbl.Name = "MinuteLbl"
         Me.MinuteLbl.Size = New System.Drawing.Size(50, 12)
         Me.MinuteLbl.TabIndex = 32
@@ -446,7 +452,7 @@ Partial Class AirConNotify
         'ResetBtn
         '
         Me.ResetBtn.AutoSize = True
-        Me.ResetBtn.Location = New System.Drawing.Point(208, 223)
+        Me.ResetBtn.Location = New System.Drawing.Point(201, 307)
         Me.ResetBtn.Name = "ResetBtn"
         Me.ResetBtn.Size = New System.Drawing.Size(37, 12)
         Me.ResetBtn.TabIndex = 53
@@ -456,7 +462,7 @@ Partial Class AirConNotify
         'ExitBtn
         '
         Me.ExitBtn.AutoSize = True
-        Me.ExitBtn.Location = New System.Drawing.Point(216, 238)
+        Me.ExitBtn.Location = New System.Drawing.Point(232, 363)
         Me.ExitBtn.Name = "ExitBtn"
         Me.ExitBtn.Size = New System.Drawing.Size(29, 12)
         Me.ExitBtn.TabIndex = 54
@@ -466,7 +472,7 @@ Partial Class AirConNotify
         'TestBtn
         '
         Me.TestBtn.AutoSize = True
-        Me.TestBtn.Location = New System.Drawing.Point(190, 207)
+        Me.TestBtn.Location = New System.Drawing.Point(183, 307)
         Me.TestBtn.Name = "TestBtn"
         Me.TestBtn.Size = New System.Drawing.Size(55, 12)
         Me.TestBtn.TabIndex = 52
@@ -476,7 +482,7 @@ Partial Class AirConNotify
         'ThanksBtn
         '
         Me.ThanksBtn.AutoSize = True
-        Me.ThanksBtn.Location = New System.Drawing.Point(125, 223)
+        Me.ThanksBtn.Location = New System.Drawing.Point(10, 363)
         Me.ThanksBtn.Name = "ThanksBtn"
         Me.ThanksBtn.Size = New System.Drawing.Size(29, 12)
         Me.ThanksBtn.TabIndex = 50
@@ -488,7 +494,7 @@ Partial Class AirConNotify
         Me.SoundCb.AutoSize = True
         Me.SoundCb.Checked = True
         Me.SoundCb.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.SoundCb.Location = New System.Drawing.Point(125, 87)
+        Me.SoundCb.Location = New System.Drawing.Point(118, 200)
         Me.SoundCb.Name = "SoundCb"
         Me.SoundCb.Size = New System.Drawing.Size(61, 16)
         Me.SoundCb.TabIndex = 26
@@ -498,7 +504,7 @@ Partial Class AirConNotify
         'UnlockCb
         '
         Me.UnlockCb.AutoSize = True
-        Me.UnlockCb.Location = New System.Drawing.Point(125, 109)
+        Me.UnlockCb.Location = New System.Drawing.Point(118, 222)
         Me.UnlockCb.Name = "UnlockCb"
         Me.UnlockCb.Size = New System.Drawing.Size(117, 16)
         Me.UnlockCb.TabIndex = 27
@@ -508,31 +514,62 @@ Partial Class AirConNotify
         'VersionBtn
         '
         Me.VersionBtn.AutoSize = True
-        Me.VersionBtn.Location = New System.Drawing.Point(125, 238)
+        Me.VersionBtn.Location = New System.Drawing.Point(46, 363)
         Me.VersionBtn.Name = "VersionBtn"
         Me.VersionBtn.Size = New System.Drawing.Size(50, 12)
         Me.VersionBtn.TabIndex = 51
         Me.VersionBtn.TabStop = True
         Me.VersionBtn.Text = "バージョン"
         '
+        'MainTc
+        '
+        Me.MainTc.Controls.Add(Me.MainTp)
+        Me.MainTc.Controls.Add(Me.SettingTp)
+        Me.MainTc.Location = New System.Drawing.Point(12, 12)
+        Me.MainTc.Name = "MainTc"
+        Me.MainTc.SelectedIndex = 0
+        Me.MainTc.Size = New System.Drawing.Size(249, 348)
+        Me.MainTc.TabIndex = 55
+        '
+        'MainTp
+        '
+        Me.MainTp.Controls.Add(Me.NotifyTgb)
+        Me.MainTp.Controls.Add(Me.MinimizeBtn)
+        Me.MainTp.Controls.Add(Me.TestBtn)
+        Me.MainTp.Location = New System.Drawing.Point(4, 22)
+        Me.MainTp.Name = "MainTp"
+        Me.MainTp.Padding = New System.Windows.Forms.Padding(3)
+        Me.MainTp.Size = New System.Drawing.Size(241, 322)
+        Me.MainTp.TabIndex = 0
+        Me.MainTp.Text = "メイン"
+        Me.MainTp.UseVisualStyleBackColor = True
+        '
+        'SettingTp
+        '
+        Me.SettingTp.Controls.Add(Me.TimeGBox)
+        Me.SettingTp.Controls.Add(Me.MinuteNud)
+        Me.SettingTp.Controls.Add(Me.MinuteLbl)
+        Me.SettingTp.Controls.Add(Me.UnlockCb)
+        Me.SettingTp.Controls.Add(Me.ResetBtn)
+        Me.SettingTp.Controls.Add(Me.SoundCb)
+        Me.SettingTp.Location = New System.Drawing.Point(4, 22)
+        Me.SettingTp.Name = "SettingTp"
+        Me.SettingTp.Padding = New System.Windows.Forms.Padding(3)
+        Me.SettingTp.Size = New System.Drawing.Size(241, 322)
+        Me.SettingTp.TabIndex = 1
+        Me.SettingTp.Text = "設定"
+        Me.SettingTp.UseVisualStyleBackColor = True
+        '
         'AirConNotify
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(255, 306)
+        Me.ClientSize = New System.Drawing.Size(273, 380)
         Me.ControlBox = False
-        Me.Controls.Add(Me.VersionBtn)
-        Me.Controls.Add(Me.UnlockCb)
-        Me.Controls.Add(Me.SoundCb)
-        Me.Controls.Add(Me.ThanksBtn)
-        Me.Controls.Add(Me.TestBtn)
+        Me.Controls.Add(Me.MainTc)
         Me.Controls.Add(Me.ExitBtn)
-        Me.Controls.Add(Me.ResetBtn)
-        Me.Controls.Add(Me.MinuteLbl)
-        Me.Controls.Add(Me.MinuteNud)
-        Me.Controls.Add(Me.MinimizeBtn)
-        Me.Controls.Add(Me.TimeGBox)
-        Me.Controls.Add(Me.NotifyTgb)
+        Me.Controls.Add(Me.VersionBtn)
+        Me.Controls.Add(Me.ThanksBtn)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AirConNotify"
         Me.Text = "AirConNotify"
@@ -540,6 +577,11 @@ Partial Class AirConNotify
         Me.TimeGBox.PerformLayout()
         Me.TaskTrayCms.ResumeLayout(False)
         CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MainTc.ResumeLayout(False)
+        Me.MainTp.ResumeLayout(False)
+        Me.MainTp.PerformLayout()
+        Me.SettingTp.ResumeLayout(False)
+        Me.SettingTp.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -588,4 +630,7 @@ Partial Class AirConNotify
     Friend WithEvents StopNotifyTsmi As ToolStripMenuItem
     Friend WithEvents VersionTsmi As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents MainTc As TabControl
+    Friend WithEvents MainTp As TabPage
+    Friend WithEvents SettingTp As TabPage
 End Class
