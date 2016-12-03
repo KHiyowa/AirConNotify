@@ -82,6 +82,12 @@
         ViewApp()
     End Sub
 
+    ' バルーンのクリック
+    Private Sub TaskTrayNi_BalloonTipClicked(sender As Object, e As EventArgs) Handles TaskTrayNi.BalloonTipClicked
+        ' 通知ボタンを反転させる
+        NotifyTgb.Checked = Not (NotifyTgb.Checked)
+    End Sub
+
 
 #End Region
 
@@ -121,7 +127,7 @@
     ' 通知を実行する
     Private Sub ExeNotify(t As Integer)
         ' 通知を表示
-        TaskTrayNi.ShowBalloonTip(60)
+        TaskTrayNi.ShowBalloonTip(10)
 
         ' サウンドを再生
         If SoundCb.Checked = True Then PlaySound(CType(t, String) + ".wav")

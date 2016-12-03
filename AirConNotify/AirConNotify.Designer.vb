@@ -53,6 +53,11 @@ Partial Class AirConNotify
         Me.MinimizeBtn = New System.Windows.Forms.Button()
         Me.TimeKeeperTm = New System.Windows.Forms.Timer(Me.components)
         Me.TaskTrayNi = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.TaskTrayCms = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.VersionTsmi = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ViewTsmi = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StopNotifyTsmi = New System.Windows.Forms.ToolStripMenuItem()
         Me.MinuteNud = New System.Windows.Forms.NumericUpDown()
         Me.MinuteLbl = New System.Windows.Forms.Label()
         Me.ResetBtn = New System.Windows.Forms.LinkLabel()
@@ -62,14 +67,9 @@ Partial Class AirConNotify
         Me.SoundCb = New System.Windows.Forms.CheckBox()
         Me.UnlockCb = New System.Windows.Forms.CheckBox()
         Me.VersionBtn = New System.Windows.Forms.LinkLabel()
-        Me.TaskTrayCms = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ViewTsmi = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StopNotifyTsmi = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.VersionTsmi = New System.Windows.Forms.ToolStripMenuItem()
         Me.TimeGBox.SuspendLayout()
-        CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TaskTrayCms.SuspendLayout()
+        CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NotifyTgb
@@ -389,12 +389,42 @@ Partial Class AirConNotify
         'TaskTrayNi
         '
         Me.TaskTrayNi.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        Me.TaskTrayNi.BalloonTipText = "まもなくエアコンが止まります。"
-        Me.TaskTrayNi.BalloonTipTitle = "AirConNotify"
+        Me.TaskTrayNi.BalloonTipText = "通知を無効にするには、このバルーンをクリックしてください。"
+        Me.TaskTrayNi.BalloonTipTitle = "まもなくエアコンが止まります"
         Me.TaskTrayNi.ContextMenuStrip = Me.TaskTrayCms
         Me.TaskTrayNi.Icon = CType(resources.GetObject("TaskTrayNi.Icon"), System.Drawing.Icon)
         Me.TaskTrayNi.Text = "AirConNotify"
         Me.TaskTrayNi.Visible = True
+        '
+        'TaskTrayCms
+        '
+        Me.TaskTrayCms.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VersionTsmi, Me.ToolStripSeparator1, Me.ViewTsmi, Me.StopNotifyTsmi})
+        Me.TaskTrayCms.Name = "ContextMenuStrip1"
+        Me.TaskTrayCms.Size = New System.Drawing.Size(177, 76)
+        '
+        'VersionTsmi
+        '
+        Me.VersionTsmi.Name = "VersionTsmi"
+        Me.VersionTsmi.Size = New System.Drawing.Size(176, 22)
+        Me.VersionTsmi.Text = "バージョン情報"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(173, 6)
+        '
+        'ViewTsmi
+        '
+        Me.ViewTsmi.Enabled = False
+        Me.ViewTsmi.Name = "ViewTsmi"
+        Me.ViewTsmi.Size = New System.Drawing.Size(176, 22)
+        Me.ViewTsmi.Text = "アプリケーションを表示"
+        '
+        'StopNotifyTsmi
+        '
+        Me.StopNotifyTsmi.Name = "StopNotifyTsmi"
+        Me.StopNotifyTsmi.Size = New System.Drawing.Size(176, 22)
+        Me.StopNotifyTsmi.Text = "通知を一時停止"
         '
         'MinuteNud
         '
@@ -485,36 +515,6 @@ Partial Class AirConNotify
         Me.VersionBtn.TabStop = True
         Me.VersionBtn.Text = "バージョン"
         '
-        'TaskTrayCms
-        '
-        Me.TaskTrayCms.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VersionTsmi, Me.ToolStripSeparator1, Me.ViewTsmi, Me.StopNotifyTsmi})
-        Me.TaskTrayCms.Name = "ContextMenuStrip1"
-        Me.TaskTrayCms.Size = New System.Drawing.Size(177, 76)
-        '
-        'ViewTsmi
-        '
-        Me.ViewTsmi.Enabled = False
-        Me.ViewTsmi.Name = "ViewTsmi"
-        Me.ViewTsmi.Size = New System.Drawing.Size(176, 22)
-        Me.ViewTsmi.Text = "アプリケーションを表示"
-        '
-        'StopNotifyTsmi
-        '
-        Me.StopNotifyTsmi.Name = "StopNotifyTsmi"
-        Me.StopNotifyTsmi.Size = New System.Drawing.Size(176, 22)
-        Me.StopNotifyTsmi.Text = "通知を一時停止"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(173, 6)
-        '
-        'VersionTsmi
-        '
-        Me.VersionTsmi.Name = "VersionTsmi"
-        Me.VersionTsmi.Size = New System.Drawing.Size(176, 22)
-        Me.VersionTsmi.Text = "バージョン情報"
-        '
         'AirConNotify
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -538,8 +538,8 @@ Partial Class AirConNotify
         Me.Text = "AirConNotify"
         Me.TimeGBox.ResumeLayout(False)
         Me.TimeGBox.PerformLayout()
-        CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TaskTrayCms.ResumeLayout(False)
+        CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
