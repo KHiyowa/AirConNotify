@@ -86,7 +86,7 @@ Partial Class AirConNotify
         Me.NotifyTgb.Location = New System.Drawing.Point(32, 50)
         Me.NotifyTgb.Name = "NotifyTgb"
         Me.NotifyTgb.Size = New System.Drawing.Size(176, 94)
-        Me.NotifyTgb.TabIndex = 24
+        Me.NotifyTgb.TabIndex = 1
         Me.NotifyTgb.Text = "通知を一時停止"
         Me.NotifyTgb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.NotifyTgb.UseVisualStyleBackColor = True
@@ -383,7 +383,7 @@ Partial Class AirConNotify
         Me.MinimizeBtn.Location = New System.Drawing.Point(32, 182)
         Me.MinimizeBtn.Name = "MinimizeBtn"
         Me.MinimizeBtn.Size = New System.Drawing.Size(176, 94)
-        Me.MinimizeBtn.TabIndex = 27
+        Me.MinimizeBtn.TabIndex = 0
         Me.MinimizeBtn.Text = "最小化"
         Me.MinimizeBtn.UseVisualStyleBackColor = True
         '
@@ -438,7 +438,7 @@ Partial Class AirConNotify
         Me.MinuteNud.Maximum = New Decimal(New Integer() {59, 0, 0, 0})
         Me.MinuteNud.Name = "MinuteNud"
         Me.MinuteNud.Size = New System.Drawing.Size(35, 19)
-        Me.MinuteNud.TabIndex = 25
+        Me.MinuteNud.TabIndex = 30
         '
         'MinuteLbl
         '
@@ -455,7 +455,7 @@ Partial Class AirConNotify
         Me.ResetBtn.Location = New System.Drawing.Point(201, 307)
         Me.ResetBtn.Name = "ResetBtn"
         Me.ResetBtn.Size = New System.Drawing.Size(37, 12)
-        Me.ResetBtn.TabIndex = 53
+        Me.ResetBtn.TabIndex = 50
         Me.ResetBtn.TabStop = True
         Me.ResetBtn.Text = "リセット"
         '
@@ -465,7 +465,7 @@ Partial Class AirConNotify
         Me.ExitBtn.Location = New System.Drawing.Point(232, 363)
         Me.ExitBtn.Name = "ExitBtn"
         Me.ExitBtn.Size = New System.Drawing.Size(29, 12)
-        Me.ExitBtn.TabIndex = 54
+        Me.ExitBtn.TabIndex = 103
         Me.ExitBtn.TabStop = True
         Me.ExitBtn.Text = "終了"
         '
@@ -475,7 +475,7 @@ Partial Class AirConNotify
         Me.TestBtn.Location = New System.Drawing.Point(183, 307)
         Me.TestBtn.Name = "TestBtn"
         Me.TestBtn.Size = New System.Drawing.Size(55, 12)
-        Me.TestBtn.TabIndex = 52
+        Me.TestBtn.TabIndex = 2
         Me.TestBtn.TabStop = True
         Me.TestBtn.Text = "通知テスト"
         '
@@ -485,7 +485,7 @@ Partial Class AirConNotify
         Me.ThanksBtn.Location = New System.Drawing.Point(10, 363)
         Me.ThanksBtn.Name = "ThanksBtn"
         Me.ThanksBtn.Size = New System.Drawing.Size(29, 12)
-        Me.ThanksBtn.TabIndex = 50
+        Me.ThanksBtn.TabIndex = 101
         Me.ThanksBtn.TabStop = True
         Me.ThanksBtn.Text = "謝辞"
         '
@@ -497,7 +497,7 @@ Partial Class AirConNotify
         Me.SoundCb.Location = New System.Drawing.Point(118, 200)
         Me.SoundCb.Name = "SoundCb"
         Me.SoundCb.Size = New System.Drawing.Size(61, 16)
-        Me.SoundCb.TabIndex = 26
+        Me.SoundCb.TabIndex = 40
         Me.SoundCb.Text = "サウンド"
         Me.SoundCb.UseVisualStyleBackColor = True
         '
@@ -507,7 +507,7 @@ Partial Class AirConNotify
         Me.UnlockCb.Location = New System.Drawing.Point(118, 222)
         Me.UnlockCb.Name = "UnlockCb"
         Me.UnlockCb.Size = New System.Drawing.Size(117, 16)
-        Me.UnlockCb.TabIndex = 27
+        Me.UnlockCb.TabIndex = 41
         Me.UnlockCb.Text = "画面省電力を解除"
         Me.UnlockCb.UseVisualStyleBackColor = True
         '
@@ -517,7 +517,7 @@ Partial Class AirConNotify
         Me.VersionBtn.Location = New System.Drawing.Point(46, 363)
         Me.VersionBtn.Name = "VersionBtn"
         Me.VersionBtn.Size = New System.Drawing.Size(50, 12)
-        Me.VersionBtn.TabIndex = 51
+        Me.VersionBtn.TabIndex = 102
         Me.VersionBtn.TabStop = True
         Me.VersionBtn.Text = "バージョン"
         '
@@ -529,7 +529,7 @@ Partial Class AirConNotify
         Me.MainTc.Name = "MainTc"
         Me.MainTc.SelectedIndex = 0
         Me.MainTc.Size = New System.Drawing.Size(249, 348)
-        Me.MainTc.TabIndex = 55
+        Me.MainTc.TabIndex = 100
         '
         'MainTp
         '
