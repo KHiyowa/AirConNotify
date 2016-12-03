@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -9,8 +10,8 @@ Imports System.Runtime.InteropServices
 ' アセンブリ属性の値を確認します
 
 <Assembly: AssemblyTitle("AirConNotify")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("エアコンが切れる時間をお知らせするアプリケーション")>
+<Assembly: AssemblyCompany("http://hiyowa.com")>
 <Assembly: AssemblyProduct("AirConNotify")>
 <Assembly: AssemblyCopyright("Copyright ©Hiyowa Kyobashi  2016")>
 <Assembly: AssemblyTrademark("")>
@@ -31,5 +32,6 @@ Imports System.Runtime.InteropServices
 ' 既定値にすることができます:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.1.1")>
-<Assembly: AssemblyFileVersion("1.0.1.1")>
+<Assembly: AssemblyVersion("1.1.0.0")>
+<Assembly: AssemblyFileVersion("1.1.0.0")>
+<Assembly: NeutralResourcesLanguage("ja-JP")>

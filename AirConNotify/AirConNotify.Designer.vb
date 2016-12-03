@@ -62,8 +62,14 @@ Partial Class AirConNotify
         Me.SoundCb = New System.Windows.Forms.CheckBox()
         Me.UnlockCb = New System.Windows.Forms.CheckBox()
         Me.VersionBtn = New System.Windows.Forms.LinkLabel()
+        Me.TaskTrayCms = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ViewTsmi = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StopNotifyTsmi = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.VersionTsmi = New System.Windows.Forms.ToolStripMenuItem()
         Me.TimeGBox.SuspendLayout()
         CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TaskTrayCms.SuspendLayout()
         Me.SuspendLayout()
         '
         'NotifyTgb
@@ -384,9 +390,10 @@ Partial Class AirConNotify
         '
         Me.TaskTrayNi.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.TaskTrayNi.BalloonTipText = "まもなくエアコンが止まります。"
-        Me.TaskTrayNi.BalloonTipTitle = "空調通知"
+        Me.TaskTrayNi.BalloonTipTitle = "AirConNotify"
+        Me.TaskTrayNi.ContextMenuStrip = Me.TaskTrayCms
         Me.TaskTrayNi.Icon = CType(resources.GetObject("TaskTrayNi.Icon"), System.Drawing.Icon)
-        Me.TaskTrayNi.Text = "空調通知"
+        Me.TaskTrayNi.Text = "AirConNotify"
         Me.TaskTrayNi.Visible = True
         '
         'MinuteNud
@@ -429,12 +436,12 @@ Partial Class AirConNotify
         'TestBtn
         '
         Me.TestBtn.AutoSize = True
-        Me.TestBtn.Location = New System.Drawing.Point(214, 207)
+        Me.TestBtn.Location = New System.Drawing.Point(190, 207)
         Me.TestBtn.Name = "TestBtn"
-        Me.TestBtn.Size = New System.Drawing.Size(31, 12)
+        Me.TestBtn.Size = New System.Drawing.Size(55, 12)
         Me.TestBtn.TabIndex = 52
         Me.TestBtn.TabStop = True
-        Me.TestBtn.Text = "テスト"
+        Me.TestBtn.Text = "通知テスト"
         '
         'ThanksBtn
         '
@@ -478,6 +485,36 @@ Partial Class AirConNotify
         Me.VersionBtn.TabStop = True
         Me.VersionBtn.Text = "バージョン"
         '
+        'TaskTrayCms
+        '
+        Me.TaskTrayCms.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VersionTsmi, Me.ToolStripSeparator1, Me.ViewTsmi, Me.StopNotifyTsmi})
+        Me.TaskTrayCms.Name = "ContextMenuStrip1"
+        Me.TaskTrayCms.Size = New System.Drawing.Size(177, 76)
+        '
+        'ViewTsmi
+        '
+        Me.ViewTsmi.Enabled = False
+        Me.ViewTsmi.Name = "ViewTsmi"
+        Me.ViewTsmi.Size = New System.Drawing.Size(176, 22)
+        Me.ViewTsmi.Text = "アプリケーションを表示"
+        '
+        'StopNotifyTsmi
+        '
+        Me.StopNotifyTsmi.Name = "StopNotifyTsmi"
+        Me.StopNotifyTsmi.Size = New System.Drawing.Size(176, 22)
+        Me.StopNotifyTsmi.Text = "通知を一時停止"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(173, 6)
+        '
+        'VersionTsmi
+        '
+        Me.VersionTsmi.Name = "VersionTsmi"
+        Me.VersionTsmi.Size = New System.Drawing.Size(176, 22)
+        Me.VersionTsmi.Text = "バージョン情報"
+        '
         'AirConNotify
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -498,10 +535,11 @@ Partial Class AirConNotify
         Me.Controls.Add(Me.NotifyTgb)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AirConNotify"
-        Me.Text = "空調通知"
+        Me.Text = "AirConNotify"
         Me.TimeGBox.ResumeLayout(False)
         Me.TimeGBox.PerformLayout()
         CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TaskTrayCms.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -545,4 +583,9 @@ Partial Class AirConNotify
     Friend WithEvents SoundCb As CheckBox
     Friend WithEvents UnlockCb As CheckBox
     Friend WithEvents VersionBtn As LinkLabel
+    Friend WithEvents TaskTrayCms As ContextMenuStrip
+    Friend WithEvents ViewTsmi As ToolStripMenuItem
+    Friend WithEvents StopNotifyTsmi As ToolStripMenuItem
+    Friend WithEvents VersionTsmi As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
 End Class
