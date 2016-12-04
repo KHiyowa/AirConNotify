@@ -460,7 +460,7 @@ Partial Class AirConNotify
         'ResetBtn
         '
         Me.ResetBtn.AutoSize = True
-        Me.ResetBtn.Location = New System.Drawing.Point(201, 307)
+        Me.ResetBtn.Location = New System.Drawing.Point(116, 307)
         Me.ResetBtn.Name = "ResetBtn"
         Me.ResetBtn.Size = New System.Drawing.Size(37, 12)
         Me.ResetBtn.TabIndex = 50
@@ -470,20 +470,20 @@ Partial Class AirConNotify
         'ExitBtn
         '
         Me.ExitBtn.AutoSize = True
-        Me.ExitBtn.Location = New System.Drawing.Point(232, 363)
+        Me.ExitBtn.Location = New System.Drawing.Point(206, 307)
         Me.ExitBtn.Name = "ExitBtn"
         Me.ExitBtn.Size = New System.Drawing.Size(29, 12)
-        Me.ExitBtn.TabIndex = 103
+        Me.ExitBtn.TabIndex = 51
         Me.ExitBtn.TabStop = True
         Me.ExitBtn.Text = "終了"
         '
         'TestBtn
         '
         Me.TestBtn.AutoSize = True
-        Me.TestBtn.Location = New System.Drawing.Point(183, 307)
+        Me.TestBtn.Location = New System.Drawing.Point(206, 363)
         Me.TestBtn.Name = "TestBtn"
         Me.TestBtn.Size = New System.Drawing.Size(55, 12)
-        Me.TestBtn.TabIndex = 2
+        Me.TestBtn.TabIndex = 102
         Me.TestBtn.TabStop = True
         Me.TestBtn.Text = "通知テスト"
         '
@@ -525,7 +525,7 @@ Partial Class AirConNotify
         Me.VersionBtn.Location = New System.Drawing.Point(12, 363)
         Me.VersionBtn.Name = "VersionBtn"
         Me.VersionBtn.Size = New System.Drawing.Size(128, 12)
-        Me.VersionBtn.TabIndex = 102
+        Me.VersionBtn.TabIndex = 100
         Me.VersionBtn.TabStop = True
         Me.VersionBtn.Text = "バージョン情報/更新確認"
         '
@@ -543,7 +543,6 @@ Partial Class AirConNotify
         '
         Me.MainTp.Controls.Add(Me.NotifyTgb)
         Me.MainTp.Controls.Add(Me.MinimizeBtn)
-        Me.MainTp.Controls.Add(Me.TestBtn)
         Me.MainTp.Location = New System.Drawing.Point(4, 22)
         Me.MainTp.Name = "MainTp"
         Me.MainTp.Padding = New System.Windows.Forms.Padding(3)
@@ -557,6 +556,7 @@ Partial Class AirConNotify
         Me.SettingTp.Controls.Add(Me.DayStartHourLbl)
         Me.SettingTp.Controls.Add(Me.DayStartHourNud)
         Me.SettingTp.Controls.Add(Me.DayStartLbl)
+        Me.SettingTp.Controls.Add(Me.ExitBtn)
         Me.SettingTp.Controls.Add(Me.SaveBtn)
         Me.SettingTp.Controls.Add(Me.MinimizeStartCb)
         Me.SettingTp.Controls.Add(Me.TimeGBox)
@@ -588,7 +588,7 @@ Partial Class AirConNotify
         Me.DayStartHourNud.Maximum = New Decimal(New Integer() {23, 0, 0, 0})
         Me.DayStartHourNud.Name = "DayStartHourNud"
         Me.DayStartHourNud.Size = New System.Drawing.Size(35, 19)
-        Me.DayStartHourNud.TabIndex = 54
+        Me.DayStartHourNud.TabIndex = 31
         Me.DayStartHourNud.Value = New Decimal(New Integer() {7, 0, 0, 0})
         '
         'DayStartLbl
@@ -605,7 +605,7 @@ Partial Class AirConNotify
         Me.SaveBtn.Location = New System.Drawing.Point(118, 281)
         Me.SaveBtn.Name = "SaveBtn"
         Me.SaveBtn.Size = New System.Drawing.Size(117, 23)
-        Me.SaveBtn.TabIndex = 52
+        Me.SaveBtn.TabIndex = 43
         Me.SaveBtn.Text = "設定保存"
         Me.SaveBtn.UseVisualStyleBackColor = True
         Me.SaveBtn.Visible = False
@@ -616,7 +616,7 @@ Partial Class AirConNotify
         Me.MinimizeStartCb.Location = New System.Drawing.Point(118, 259)
         Me.MinimizeStartCb.Name = "MinimizeStartCb"
         Me.MinimizeStartCb.Size = New System.Drawing.Size(102, 16)
-        Me.MinimizeStartCb.TabIndex = 51
+        Me.MinimizeStartCb.TabIndex = 42
         Me.MinimizeStartCb.Text = "最小化して起動"
         Me.MinimizeStartCb.UseVisualStyleBackColor = True
         Me.MinimizeStartCb.Visible = False
@@ -628,7 +628,7 @@ Partial Class AirConNotify
         Me.ClientSize = New System.Drawing.Size(273, 380)
         Me.ControlBox = False
         Me.Controls.Add(Me.MainTc)
-        Me.Controls.Add(Me.ExitBtn)
+        Me.Controls.Add(Me.TestBtn)
         Me.Controls.Add(Me.VersionBtn)
         Me.Controls.Add(Me.ThanksBtn)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -640,7 +640,6 @@ Partial Class AirConNotify
         CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MainTc.ResumeLayout(False)
         Me.MainTp.ResumeLayout(False)
-        Me.MainTp.PerformLayout()
         Me.SettingTp.ResumeLayout(False)
         Me.SettingTp.PerformLayout()
         CType(Me.DayStartHourNud, System.ComponentModel.ISupportInitialize).EndInit()
