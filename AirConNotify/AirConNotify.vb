@@ -1,7 +1,7 @@
-﻿Public Class AirConNotify
-    Private player As System.Media.SoundPlayer = Nothing
+﻿
+Public Class AirConNotify
+    Private player As Media.SoundPlayer = Nothing
     Const TEST As Integer = 24
-    Const DAYSTART As Integer = 6
 
 #Region "UI関連"
 
@@ -44,7 +44,7 @@
         If NotifyTgb.Checked = True Then
             NotifyTgb.Text = "通知を一時停止"
         Else
-            Dim Res As MsgBoxResult = MsgBox("次の " + CType(DAYSTART, String) + " 時まで通知を無効にしますか?", vbYesNo + vbQuestion)
+            Dim Res As MsgBoxResult = MsgBox("次の " + CType(DayStartHourNud.Value, String) + " 時まで通知を無効にしますか?", vbYesNo + vbQuestion)
             If Res = vbNo Then
                 NotifyTgb.Checked = True
                 Exit Sub
@@ -79,13 +79,14 @@
 
     ' ダブルクリック
     Private Sub TaskTrayNi_DoubleClick(sender As Object, e As EventArgs) Handles TaskTrayNi.DoubleClick
+        ' アプリケーションを表示
         ViewApp()
     End Sub
 
     ' バルーンのクリック
     Private Sub TaskTrayNi_BalloonTipClicked(sender As Object, e As EventArgs) Handles TaskTrayNi.BalloonTipClicked
-        ' 通知ボタンを反転させる
-        NotifyTgb.Checked = Not (NotifyTgb.Checked)
+        ' アプリケーションを表示
+        ViewApp()
     End Sub
 
 
@@ -113,7 +114,7 @@
 
         ' 通知が無効で、1日の始まりの時刻だったら通知を再有効化
         If NotifyTgb.Checked = False And
-                iMinute = MinuteNud.Value And CheckState(DAYSTART) Then
+            iMinute = 0 And iHour = DayStartHourNud.Value Then
             NotifyTgb.Checked = True
         End If
     End Sub
@@ -137,16 +138,17 @@
     Private Sub PlaySound(WaveFile As String)
         WaveFile = "wav\" + WaveFile
 
-        '読み込む
+        ' 読み込む
+
         If IO.File.Exists(WaveFile) Then
-            player = New System.Media.SoundPlayer(WaveFile)
+            player = New Media.SoundPlayer(WaveFile)          ' その時刻のファイルが存在するか確認
         ElseIf IO.File.Exists("wav\default.wav") Then
-            player = New System.Media.SoundPlayer("wav\default.wav")
+            player = New Media.SoundPlayer("wav\default.wav") ' 存在しなかったら、defaultファイルが存在するか確認
         Else
-            Exit Sub
+            Exit Sub ' 存在しなかったら、サウンドを再生しない
         End If
 
-        '非同期再生する
+        '非同期再生
         player.Play()
     End Sub
 
@@ -178,7 +180,7 @@
 
     ' 初期設定にリセットする
     Private Sub Reset()
-        Dim Res As MsgBoxResult = MsgBox("リセットしますか?", vbYesNo + vbQuestion)
+        Dim Res As MsgBoxResult = MsgBox("リセットしますか?", vbYesNo + vbExclamation)
         If Res = vbNo Then Exit Sub
 
         ' すべての時刻のチェックを外す
@@ -207,7 +209,16 @@
 
     ' バージョン情報
     Private Sub VersionInfo()
-        MsgBox(My.Application.Info.Copyright & Environment.NewLine & Me.ProductName + ": " + Me.ProductVersion, vbInformation)
+        Dim Res As MsgBoxResult = MsgBox(My.Application.Info.Copyright & Environment.NewLine &
+               Me.ProductName + ": " + Me.ProductVersion & Environment.NewLine & Environment.NewLine &
+               "配布サイトを開き、更新を確認しますか?", vbYesNo + vbInformation)
+        If Res = vbNo Then Exit Sub
+        UpdateChk()
+    End Sub
+
+    ' 更新確認
+    Private Sub UpdateChk()
+        Process.Start("https://github.com/KHiyowa/AirConNotify/releases/latest")
     End Sub
 
 #End Region
