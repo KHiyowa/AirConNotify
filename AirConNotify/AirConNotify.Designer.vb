@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AirConNotify
     Inherits System.Windows.Forms.Form
 
     'フォームがコンポーネントの一覧をクリーンアップするために dispose をオーバーライドします。
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AirConNotify
     'メモ: 以下のプロシージャは Windows フォーム デザイナーで必要です。
     'Windows フォーム デザイナーを使用して変更できます。  
     'コード エディターを使って変更しないでください。
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AirConNotify))
@@ -75,7 +75,6 @@ Partial Class AirConNotify
         Me.DayStartLbl = New System.Windows.Forms.Label()
         Me.SaveBtn = New System.Windows.Forms.Button()
         Me.MinimizeStartCb = New System.Windows.Forms.CheckBox()
-        Me.UpdateChkBtn = New System.Windows.Forms.LinkLabel()
         Me.TimeGBox.SuspendLayout()
         Me.TaskTrayCms.SuspendLayout()
         CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +89,7 @@ Partial Class AirConNotify
         Me.NotifyTgb.Appearance = System.Windows.Forms.Appearance.Button
         Me.NotifyTgb.Checked = True
         Me.NotifyTgb.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.NotifyTgb.Font = New System.Drawing.Font("MS UI Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.NotifyTgb.Location = New System.Drawing.Point(32, 50)
         Me.NotifyTgb.Name = "NotifyTgb"
         Me.NotifyTgb.Size = New System.Drawing.Size(176, 94)
@@ -387,6 +387,7 @@ Partial Class AirConNotify
         '
         'MinimizeBtn
         '
+        Me.MinimizeBtn.Font = New System.Drawing.Font("MS UI Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.MinimizeBtn.Location = New System.Drawing.Point(32, 182)
         Me.MinimizeBtn.Name = "MinimizeBtn"
         Me.MinimizeBtn.Size = New System.Drawing.Size(176, 94)
@@ -489,7 +490,7 @@ Partial Class AirConNotify
         'ThanksBtn
         '
         Me.ThanksBtn.AutoSize = True
-        Me.ThanksBtn.Location = New System.Drawing.Point(151, 363)
+        Me.ThanksBtn.Location = New System.Drawing.Point(146, 363)
         Me.ThanksBtn.Name = "ThanksBtn"
         Me.ThanksBtn.Size = New System.Drawing.Size(29, 12)
         Me.ThanksBtn.TabIndex = 101
@@ -521,12 +522,12 @@ Partial Class AirConNotify
         'VersionBtn
         '
         Me.VersionBtn.AutoSize = True
-        Me.VersionBtn.Location = New System.Drawing.Point(71, 363)
+        Me.VersionBtn.Location = New System.Drawing.Point(12, 363)
         Me.VersionBtn.Name = "VersionBtn"
-        Me.VersionBtn.Size = New System.Drawing.Size(74, 12)
+        Me.VersionBtn.Size = New System.Drawing.Size(128, 12)
         Me.VersionBtn.TabIndex = 102
         Me.VersionBtn.TabStop = True
-        Me.VersionBtn.Text = "バージョン情報"
+        Me.VersionBtn.Text = "バージョン情報/更新確認"
         '
         'MainTc
         '
@@ -601,34 +602,24 @@ Partial Class AirConNotify
         '
         'SaveBtn
         '
-        Me.SaveBtn.Enabled = False
         Me.SaveBtn.Location = New System.Drawing.Point(118, 281)
         Me.SaveBtn.Name = "SaveBtn"
         Me.SaveBtn.Size = New System.Drawing.Size(117, 23)
         Me.SaveBtn.TabIndex = 52
         Me.SaveBtn.Text = "設定保存"
         Me.SaveBtn.UseVisualStyleBackColor = True
+        Me.SaveBtn.Visible = False
         '
         'MinimizeStartCb
         '
         Me.MinimizeStartCb.AutoSize = True
-        Me.MinimizeStartCb.Enabled = False
         Me.MinimizeStartCb.Location = New System.Drawing.Point(118, 259)
         Me.MinimizeStartCb.Name = "MinimizeStartCb"
         Me.MinimizeStartCb.Size = New System.Drawing.Size(102, 16)
         Me.MinimizeStartCb.TabIndex = 51
         Me.MinimizeStartCb.Text = "最小化して起動"
         Me.MinimizeStartCb.UseVisualStyleBackColor = True
-        '
-        'UpdateChkBtn
-        '
-        Me.UpdateChkBtn.AutoSize = True
-        Me.UpdateChkBtn.Location = New System.Drawing.Point(12, 363)
-        Me.UpdateChkBtn.Name = "UpdateChkBtn"
-        Me.UpdateChkBtn.Size = New System.Drawing.Size(53, 12)
-        Me.UpdateChkBtn.TabIndex = 104
-        Me.UpdateChkBtn.TabStop = True
-        Me.UpdateChkBtn.Text = "更新確認"
+        Me.MinimizeStartCb.Visible = False
         '
         'AirConNotify
         '
@@ -636,7 +627,6 @@ Partial Class AirConNotify
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(273, 380)
         Me.ControlBox = False
-        Me.Controls.Add(Me.UpdateChkBtn)
         Me.Controls.Add(Me.MainTc)
         Me.Controls.Add(Me.ExitBtn)
         Me.Controls.Add(Me.VersionBtn)
@@ -710,5 +700,4 @@ Partial Class AirConNotify
     Friend WithEvents DayStartLbl As Label
     Friend WithEvents SaveBtn As Button
     Friend WithEvents MinimizeStartCb As CheckBox
-    Friend WithEvents UpdateChkBtn As LinkLabel
 End Class

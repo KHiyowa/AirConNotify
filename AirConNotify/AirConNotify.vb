@@ -24,11 +24,6 @@ Public Class AirConNotify
         Reset()
     End Sub
 
-    ' 更新確認ボタン
-    Private Sub UpdateChkBtn_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles UpdateChkBtn.LinkClicked
-        UpdateChk()
-    End Sub
-
     ' バージョンボタン
     Private Sub VersionBtn_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles VersionBtn.LinkClicked
         VersionInfo()
@@ -84,13 +79,14 @@ Public Class AirConNotify
 
     ' ダブルクリック
     Private Sub TaskTrayNi_DoubleClick(sender As Object, e As EventArgs) Handles TaskTrayNi.DoubleClick
+        ' アプリケーションを表示
         ViewApp()
     End Sub
 
     ' バルーンのクリック
     Private Sub TaskTrayNi_BalloonTipClicked(sender As Object, e As EventArgs) Handles TaskTrayNi.BalloonTipClicked
-        ' 通知ボタンを反転させる
-        NotifyTgb.Checked = Not (NotifyTgb.Checked)
+        ' アプリケーションを表示
+        ViewApp()
     End Sub
 
 
@@ -184,7 +180,7 @@ Public Class AirConNotify
 
     ' 初期設定にリセットする
     Private Sub Reset()
-        Dim Res As MsgBoxResult = MsgBox("リセットしますか?", vbYesNo + vbQuestion)
+        Dim Res As MsgBoxResult = MsgBox("リセットしますか?", vbYesNo + vbExclamation)
         If Res = vbNo Then Exit Sub
 
         ' すべての時刻のチェックを外す
@@ -211,14 +207,18 @@ Public Class AirConNotify
 
     End Sub
 
+    ' バージョン情報
+    Private Sub VersionInfo()
+        Dim Res As MsgBoxResult = MsgBox(My.Application.Info.Copyright & Environment.NewLine &
+               Me.ProductName + ": " + Me.ProductVersion & Environment.NewLine & Environment.NewLine &
+               "配布サイトを開き、更新を確認しますか?", vbYesNo + vbInformation)
+        If Res = vbNo Then Exit Sub
+        UpdateChk()
+    End Sub
+
     ' 更新確認
     Private Sub UpdateChk()
         Process.Start("https://github.com/KHiyowa/AirConNotify/releases/latest")
-    End Sub
-
-    ' バージョン情報
-    Private Sub VersionInfo()
-        MsgBox(My.Application.Info.Copyright & Environment.NewLine & Me.ProductName + ": " + Me.ProductVersion, vbInformation)
     End Sub
 
 #End Region
