@@ -70,12 +70,19 @@ Partial Class AirConNotify
         Me.MainTc = New System.Windows.Forms.TabControl()
         Me.MainTp = New System.Windows.Forms.TabPage()
         Me.SettingTp = New System.Windows.Forms.TabPage()
+        Me.DayStartHourLbl = New System.Windows.Forms.Label()
+        Me.DayStartHourNud = New System.Windows.Forms.NumericUpDown()
+        Me.DayStartLbl = New System.Windows.Forms.Label()
+        Me.SaveBtn = New System.Windows.Forms.Button()
+        Me.MinimizeStartCb = New System.Windows.Forms.CheckBox()
+        Me.UpdateChkBtn = New System.Windows.Forms.LinkLabel()
         Me.TimeGBox.SuspendLayout()
         Me.TaskTrayCms.SuspendLayout()
         CType(Me.MinuteNud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainTc.SuspendLayout()
         Me.MainTp.SuspendLayout()
         Me.SettingTp.SuspendLayout()
+        CType(Me.DayStartHourNud, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NotifyTgb
@@ -122,7 +129,7 @@ Partial Class AirConNotify
         Me.TimeGBox.Size = New System.Drawing.Size(107, 280)
         Me.TimeGBox.TabIndex = 25
         Me.TimeGBox.TabStop = False
-        Me.TimeGBox.Text = "通知時"
+        Me.TimeGBox.Text = "時"
         '
         'H23Cb
         '
@@ -482,7 +489,7 @@ Partial Class AirConNotify
         'ThanksBtn
         '
         Me.ThanksBtn.AutoSize = True
-        Me.ThanksBtn.Location = New System.Drawing.Point(10, 363)
+        Me.ThanksBtn.Location = New System.Drawing.Point(151, 363)
         Me.ThanksBtn.Name = "ThanksBtn"
         Me.ThanksBtn.Size = New System.Drawing.Size(29, 12)
         Me.ThanksBtn.TabIndex = 101
@@ -494,7 +501,7 @@ Partial Class AirConNotify
         Me.SoundCb.AutoSize = True
         Me.SoundCb.Checked = True
         Me.SoundCb.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.SoundCb.Location = New System.Drawing.Point(118, 200)
+        Me.SoundCb.Location = New System.Drawing.Point(118, 215)
         Me.SoundCb.Name = "SoundCb"
         Me.SoundCb.Size = New System.Drawing.Size(61, 16)
         Me.SoundCb.TabIndex = 40
@@ -504,7 +511,7 @@ Partial Class AirConNotify
         'UnlockCb
         '
         Me.UnlockCb.AutoSize = True
-        Me.UnlockCb.Location = New System.Drawing.Point(118, 222)
+        Me.UnlockCb.Location = New System.Drawing.Point(118, 237)
         Me.UnlockCb.Name = "UnlockCb"
         Me.UnlockCb.Size = New System.Drawing.Size(117, 16)
         Me.UnlockCb.TabIndex = 41
@@ -514,12 +521,12 @@ Partial Class AirConNotify
         'VersionBtn
         '
         Me.VersionBtn.AutoSize = True
-        Me.VersionBtn.Location = New System.Drawing.Point(46, 363)
+        Me.VersionBtn.Location = New System.Drawing.Point(71, 363)
         Me.VersionBtn.Name = "VersionBtn"
-        Me.VersionBtn.Size = New System.Drawing.Size(50, 12)
+        Me.VersionBtn.Size = New System.Drawing.Size(74, 12)
         Me.VersionBtn.TabIndex = 102
         Me.VersionBtn.TabStop = True
-        Me.VersionBtn.Text = "バージョン"
+        Me.VersionBtn.Text = "バージョン情報"
         '
         'MainTc
         '
@@ -546,6 +553,11 @@ Partial Class AirConNotify
         '
         'SettingTp
         '
+        Me.SettingTp.Controls.Add(Me.DayStartHourLbl)
+        Me.SettingTp.Controls.Add(Me.DayStartHourNud)
+        Me.SettingTp.Controls.Add(Me.DayStartLbl)
+        Me.SettingTp.Controls.Add(Me.SaveBtn)
+        Me.SettingTp.Controls.Add(Me.MinimizeStartCb)
         Me.SettingTp.Controls.Add(Me.TimeGBox)
         Me.SettingTp.Controls.Add(Me.MinuteNud)
         Me.SettingTp.Controls.Add(Me.MinuteLbl)
@@ -560,12 +572,71 @@ Partial Class AirConNotify
         Me.SettingTp.Text = "設定"
         Me.SettingTp.UseVisualStyleBackColor = True
         '
+        'DayStartHourLbl
+        '
+        Me.DayStartHourLbl.AutoSize = True
+        Me.DayStartHourLbl.Location = New System.Drawing.Point(185, 24)
+        Me.DayStartHourLbl.Name = "DayStartHourLbl"
+        Me.DayStartHourLbl.Size = New System.Drawing.Size(17, 12)
+        Me.DayStartHourLbl.TabIndex = 55
+        Me.DayStartHourLbl.Text = "時"
+        '
+        'DayStartHourNud
+        '
+        Me.DayStartHourNud.Location = New System.Drawing.Point(144, 22)
+        Me.DayStartHourNud.Maximum = New Decimal(New Integer() {23, 0, 0, 0})
+        Me.DayStartHourNud.Name = "DayStartHourNud"
+        Me.DayStartHourNud.Size = New System.Drawing.Size(35, 19)
+        Me.DayStartHourNud.TabIndex = 54
+        Me.DayStartHourNud.Value = New Decimal(New Integer() {7, 0, 0, 0})
+        '
+        'DayStartLbl
+        '
+        Me.DayStartLbl.AutoSize = True
+        Me.DayStartLbl.Location = New System.Drawing.Point(116, 7)
+        Me.DayStartLbl.Name = "DayStartLbl"
+        Me.DayStartLbl.Size = New System.Drawing.Size(68, 12)
+        Me.DayStartLbl.TabIndex = 53
+        Me.DayStartLbl.Text = "一日の始まり"
+        '
+        'SaveBtn
+        '
+        Me.SaveBtn.Enabled = False
+        Me.SaveBtn.Location = New System.Drawing.Point(118, 281)
+        Me.SaveBtn.Name = "SaveBtn"
+        Me.SaveBtn.Size = New System.Drawing.Size(117, 23)
+        Me.SaveBtn.TabIndex = 52
+        Me.SaveBtn.Text = "設定保存"
+        Me.SaveBtn.UseVisualStyleBackColor = True
+        '
+        'MinimizeStartCb
+        '
+        Me.MinimizeStartCb.AutoSize = True
+        Me.MinimizeStartCb.Enabled = False
+        Me.MinimizeStartCb.Location = New System.Drawing.Point(118, 259)
+        Me.MinimizeStartCb.Name = "MinimizeStartCb"
+        Me.MinimizeStartCb.Size = New System.Drawing.Size(102, 16)
+        Me.MinimizeStartCb.TabIndex = 51
+        Me.MinimizeStartCb.Text = "最小化して起動"
+        Me.MinimizeStartCb.UseVisualStyleBackColor = True
+        '
+        'UpdateChkBtn
+        '
+        Me.UpdateChkBtn.AutoSize = True
+        Me.UpdateChkBtn.Location = New System.Drawing.Point(12, 363)
+        Me.UpdateChkBtn.Name = "UpdateChkBtn"
+        Me.UpdateChkBtn.Size = New System.Drawing.Size(53, 12)
+        Me.UpdateChkBtn.TabIndex = 104
+        Me.UpdateChkBtn.TabStop = True
+        Me.UpdateChkBtn.Text = "更新確認"
+        '
         'AirConNotify
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(273, 380)
         Me.ControlBox = False
+        Me.Controls.Add(Me.UpdateChkBtn)
         Me.Controls.Add(Me.MainTc)
         Me.Controls.Add(Me.ExitBtn)
         Me.Controls.Add(Me.VersionBtn)
@@ -582,6 +653,7 @@ Partial Class AirConNotify
         Me.MainTp.PerformLayout()
         Me.SettingTp.ResumeLayout(False)
         Me.SettingTp.PerformLayout()
+        CType(Me.DayStartHourNud, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -633,4 +705,10 @@ Partial Class AirConNotify
     Friend WithEvents MainTc As TabControl
     Friend WithEvents MainTp As TabPage
     Friend WithEvents SettingTp As TabPage
+    Friend WithEvents DayStartHourLbl As Label
+    Friend WithEvents DayStartHourNud As NumericUpDown
+    Friend WithEvents DayStartLbl As Label
+    Friend WithEvents SaveBtn As Button
+    Friend WithEvents MinimizeStartCb As CheckBox
+    Friend WithEvents UpdateChkBtn As LinkLabel
 End Class
