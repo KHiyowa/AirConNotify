@@ -403,7 +403,7 @@ Partial Class AirConNotify
         'TaskTrayNi
         '
         Me.TaskTrayNi.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        Me.TaskTrayNi.BalloonTipText = "通知を無効にするには、このバルーンをクリックしてください。"
+        Me.TaskTrayNi.BalloonTipText = "通知の設定を変更するには、このバルーンをクリックしてください。"
         Me.TaskTrayNi.BalloonTipTitle = "まもなくエアコンが止まります"
         Me.TaskTrayNi.ContextMenuStrip = Me.TaskTrayCms
         Me.TaskTrayNi.Icon = CType(resources.GetObject("TaskTrayNi.Icon"), System.Drawing.Icon)
